@@ -14,8 +14,8 @@ function CustomButton() {
 
 const styles = StyleSheet.create({
   button: {
-    width: 60,
-    height: 50,
+    width: 180,
+    height: 180,
     borderRadius: 100,
     position: 'relative',
     backgroundColor: 'transparent', // Ajuste a cor de fundo aqui
