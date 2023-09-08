@@ -4,7 +4,7 @@ const fs = require('fs'); // Importe o módulo 'fs' para ler o arquivo JSON
 const contacts = require('./contacts.json') //array criado para teste 
 
 
-router.post('/contatcts', (req, res)=>{
+router.post('/contacts', (req, res)=>{
     //receba os dados do coropo da solicitaçao  (req.body)
     const newContact = req.body;
 
@@ -43,11 +43,11 @@ router.delete('/contacts/:id', (req, res)=>{
     // Encontre o índice do contato a ser excluído no array
     const contactIndex = contacts.findIndex(contact => contact.id === contactId);
 
-    if (contactIndex === -1){
+    if (contactIndex === 0){
      // Se o contato não for encontrado, retorne um status 404 (Não Encontrado)
      res.status(404).json({error: 'Contato nao encontrado'});
     } else {
-        // senao remova o contato do array
+    // senao remova o contato do array
       contacts.splice(contactIndex, 1);
 
     res.status(204).send();
