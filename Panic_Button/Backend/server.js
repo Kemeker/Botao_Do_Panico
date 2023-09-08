@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 // Defina as rotas da API aqui
 
 app.get('/', (req, res) => {
-  res.send('Bem-vindo ao servidor do Panic Button!');
+  res.send('Bem-vindo ao servidor do Botao de Emergencia!');
 });
 
 // Iniciar o servidor
