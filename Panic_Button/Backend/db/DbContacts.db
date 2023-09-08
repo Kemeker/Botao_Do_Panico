@@ -1,0 +1,30 @@
+const sqlite3 = require('sqlite3').verbose();
+
+// Caminho para o arquivo do banco de dados
+const dbPath = './db/contacts.db';
+
+// Crie ou abra o arquivo do banco de dados
+const db = new sqlite3.Database(dbPath, sqlite3.OPEN_CREATE | sqlite3.OPEN_READWRITE, (err) => {
+  if (err) {
+    console.error(`Erro ao abrir o banco de dados (${dbPath}): ${err.message}`);
+  } else {
+    console.log('Conectado ao banco de dados SQLite.');
+
+    // Crie a tabela de contatos se ela não existir
+    db.run(`
+      CREATE TABLE IF NOT EXISTS contacts (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        phoneNumber TEXT
+      )
+    `, (tableErr) => {
+      if (tableErr) {
+        console.error(`Erro ao criar a tabela: ${tableErr.message}`);
+      } else {
+        console.log('Tabela de contatos criada com sucesso.');
+      }
+    });
+  }
+});
+
+module.exports = db;
