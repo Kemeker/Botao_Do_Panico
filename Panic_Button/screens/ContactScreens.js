@@ -42,19 +42,23 @@ function ContactScreen({ navigation }) {
     container: {
       flex: 1,
       padding: 16,
+      backgroundColor:'#1D84FA'
+      
     },
     input: {
+      backgroundColor: 'white',
       height: 40,
-      borderColor: 'gray',
+      borderColor: 'black',
       borderWidth: 1,
       marginBottom: 16,
       padding: 8,
     },
     button: {
-      backgroundColor: 'blue',
+      backgroundColor: 'red',
       padding: 12,
       borderRadius: 8,
       alignItems: 'center',
+      
     },
   });
   

@@ -9,7 +9,7 @@ function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text>Botao do Panico</Text>
+      <Text>Botao de Emergencia</Text>
       <CustomButton />
       <TouchableOpacity
         style={styles.button}
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: '#1D84FA'
   },
   button: {
     backgroundColor: 'blue',

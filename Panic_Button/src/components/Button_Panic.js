@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     position: 'relative',
     backgroundColor: 'transparent', // Ajuste a cor de fundo aqui
-    borderWidth: 1, // Ajuste a largura da borda aqui
-    borderColor: 'rgb(150, 50, 60)', // Ajuste a cor da borda aqui
+    borderWidth: 18, 
+    borderColor: 'red'
   },
   back: {
     backgroundColor: 'rgb(150, 50, 60)', // Cor de fundo do "back" do botão
