@@ -8,21 +8,21 @@ function CustomButton({ onPress, title }) {
     <>
 
     
-        <View>
-            <Text style={tw`text-lg text-white`}>Precione para pedir ajuda</Text>
-        </View>
+    <View>
+      <Text style={tw`text-lg text-white`}>Precione para pedir ajuda</Text>
+    </View>
     <TouchableOpacity
         
-        onPress={onPress}
-        style={tw`bg-red-500 px-10 py-3 rounded-full items-center justify-center shadow-lg`}
-        activeOpacity={0.7}
+      onPress={onPress}
+      style={tw`bg-red-500 px-10 py-3 rounded-full items-center justify-center shadow-lg`}
+      activeOpacity={0.7}
     >
       
       <Text style={tw`text-white text-lg uppercase tracking-wide font-bold`}>S.O.S
-      {title}
+        {title}
       </Text>
       
-  </TouchableOpacity>
+    </TouchableOpacity>
     
    
   </>

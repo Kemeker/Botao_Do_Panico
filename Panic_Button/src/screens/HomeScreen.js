@@ -1,5 +1,5 @@
 import React from "react"
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native"
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from "react-native"
 import CustomButton from '../components/Button_Panic.js'
 
 
@@ -11,29 +11,29 @@ function HomeScreen({ navigation }) {
  
 
   return (
-    
-      <View style={styles.container} >
-          <View style={styles.buttonFunc}>
-            <TouchableOpacity onPress={TelaDeContatos} style={styles.button} >
-              <Text style={styles.buttonText}>Cadastrar Contato</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity onPress={TelaDeContatos} style={styles.button} >
-              <Text style={styles.buttonText}>Meus Contatos</Text>
-            </TouchableOpacity>
+      <ImageBackground source={{uri: 'https://www.securityreport.com.br/wp-content/uploads/2016/11/shutterstock_266676590_Sashkin.jpg' }} style={styles.container} >
+        <View style={styles.container} >
+            <View style={styles.buttonFunc}>
+              <TouchableOpacity onPress={TelaDeContatos} style={styles.button} >
+                <Text style={styles.buttonText}>Cadastrar Contato</Text>
+              </TouchableOpacity>
+              
+              <TouchableOpacity onPress={TelaDeContatos} style={styles.button} >
+                <Text style={styles.buttonText}>Meus Contatos</Text>
+              </TouchableOpacity>
 
-            <TouchableOpacity onPress={TelaDeContatos} style={styles.button} >
-              <Text style={styles.buttonText}>Excluir Contato</Text>
-            </TouchableOpacity>
-            
-            
-          </View>
-          <View style={styles.buttonSOS}> 
-            <CustomButton />
-          </View>
-        
-      </View>
-      
+              <TouchableOpacity onPress={TelaDeContatos} style={styles.button} >
+                <Text style={styles.buttonText}>Excluir Contato</Text>
+              </TouchableOpacity>
+              
+              
+            </View>
+            <View style={styles.buttonSOS}> 
+              <CustomButton />
+            </View>
+          
+        </View>
+      </ImageBackground>
       
     
    
@@ -46,14 +46,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: 'black',
     flexDirection: 'column',
     
     
     
   },
   button: {
-    backgroundColor: '#007A78',
+    backgroundColor: '#3326C7',
     alignItems: 'center',
     justifyContent: 'center', 
     padding: 10,
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
     
   },
   buttonText: {
-    color: '#FFC745',
+    color: 'white',
   },  
 
   buttonFunc: {
