@@ -25,11 +25,11 @@ Corrigir alguns erros do backedn e colocar para rodar em formato apk.
 
 ## Screenshots
 
-![App Screenshot](https://media.licdn.com/dms/image/D4D22AQFsbTjo9EVlYA/feedshare-shrink_1280/0/1694201732487?e=1697068800&v=beta&t=ornSQIPIdzXckqrc5CvtH08dKGa-LsjkPFvio0cH-z0)
+![App Screenshot](https://media.licdn.com/dms/image/D4D22AQE3t--tOp-HLw/feedshare-shrink_800/0/1712993742622?e=1715817600&v=beta&t=TytmYYYPSh61JQTDZ1-osGbh8io6TEG5P61P8uzAd2c)
 
-![App Screenshot](https://media.licdn.com/dms/image/D4D22AQE5dzOqvR2TOQ/feedshare-shrink_1280/0/1694201732403?e=1697068800&v=beta&t=9Dy12wYNh8b2aPXftgUGwflTZ9KBJ50dh266n7cW1Gc)
+![App Screenshot](https://media.licdn.com/dms/image/D4D22AQGC3m_w5LfEww/feedshare-shrink_2048_1536/0/1712993742585?e=1715817600&v=beta&t=2eX4vNXo_QTZNxJosCpkZpaYdLsVFccHAqSr1huHA3M)
 
-![App Screenshot](https://media.licdn.com/dms/image/D4D22AQHCvxgIJe8QcQ/feedshare-shrink_1280/0/1694201732328?e=1697068800&v=beta&t=F6ooMER357R9hdZS9ejZr61eZ-WKkvRAVno5yFUL9so)
+
 
 ## 🛠 Habilidades
 Python, Javascript, HTML, CSS, React, Node.js
