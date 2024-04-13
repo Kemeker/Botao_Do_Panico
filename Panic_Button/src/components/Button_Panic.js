@@ -1,27 +1,46 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React from 'react'
+import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
+import tw from 'tailwind-react-native-classnames'
 
-function CustomButton() {
+function CustomButton({ onPress, title }) {
+
   return (
-    <TouchableOpacity style={styles.button}>
-      <View style={styles.back}></View>
-      <View style={styles.front}>
+    <>
+
+    
+        <View>
+            <Text style={tw`text-lg text-white`}>Precione para pedir ajuda</Text>
+        </View>
+    <TouchableOpacity
         
-      </View>
-    </TouchableOpacity>
-  );
+        onPress={onPress}
+        style={tw`bg-red-500 px-10 py-3 rounded-full items-center justify-center shadow-lg`}
+        activeOpacity={0.7}
+    >
+      
+      <Text style={tw`text-white text-lg uppercase tracking-wide font-bold`}>S.O.S
+      {title}
+      </Text>
+      
+  </TouchableOpacity>
+    
+   
+  </>
+
+   );
 }
 
-const styles = StyleSheet.create({
+const styles_1 = StyleSheet.create({
   button: {
-    width: 180,
-    height: 180,
+    width: 200,
+    height: 200,
     borderRadius: 100,
     position: 'relative',
-    backgroundColor: 'transparent', // Ajuste a cor de fundo aqui
+    backgroundColor: 'transparent', 
     borderWidth: 18, 
     borderColor: 'red'
   },
+  
   back: {
     backgroundColor: 'rgb(150, 50, 60)', // Cor de fundo do "back" do botão
     borderRadius: 100,
@@ -47,10 +66,9 @@ const styles = StyleSheet.create({
     fontFamily: 'inherit',
     color: 'rgb(150, 50, 60)', // Cor do texto
     transform: [{ translateY: -15 }],
-  },
-  buttonText: {
-    color: 'white', // Cor do texto
-  },
-});
+  }
+
+})
+
 
 export default CustomButton;
