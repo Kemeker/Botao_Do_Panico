@@ -14,7 +14,9 @@ function AdicionarContato({ onAdicionar }) { // onAdicionar precisa ser passado 
     }
 
     return(
-        <View>
+        
+        
+        <View> 
             <TextInput
                 style={styles.input}
                 placeholder="Nome"
@@ -33,6 +35,11 @@ function AdicionarContato({ onAdicionar }) { // onAdicionar precisa ser passado 
                 onPress={adicionarContato}
             />
         </View>
+           
+
+
+
+         
     );
 }
 

@@ -11,14 +11,27 @@ function GerenciamentoDeContatos ({ navigation }) {
     setContatos(novosContatos)
   }
 
-  return (
-    <View style={styles.container}>
-      <AdicionarContato onAdicionar={atualizarContatos} />
-      <ListarContatos contatos={contatos} onAtualizar={atualizarContatos} />
-      
+  // funçao para excluir contatos
+  const excluirContato = (id) => {
+    //logica para excluir
+    const novosContatos = contatos.filter(contato => contato.id !== id )
+    setContatos(novosContatos)
+    // adicionar chamada para API se necessario 
+  }
 
-    </View>
+  // funçao para editar contato
+  const editarContato = (contato) => {
+    navigation.navigate('EditarContato', {contato})
+  }
+
+  return (
     
+
+      <View style={styles.container}> 
+        <AdicionarContato onAdicionar={atualizarContatos} />
+        <ListarContatos contatos={contatos} onExcluir={excluirContato} onEditar={editarContato} />
+        
+      </View>
   );
 }
 
