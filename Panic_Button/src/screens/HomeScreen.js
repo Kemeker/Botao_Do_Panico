@@ -7,13 +7,12 @@ import CustomButton from '../components/Button_Panic.js'
 
 function HomeScreen({ navigation }) {
   
- 
  return (
       
       <ImageBackground source={{uri: 'https://www.securityreport.com.br/wp-content/uploads/2016/11/shutterstock_266676590_Sashkin.jpg' }} style={styles.container} >
         <View style={styles.container} >
             <View style={styles.buttonFunc}>
-              <TouchableOpacity onPress={() => navigation.navigate('GerenciamentoDeContatos')} style={styles.button} >
+              <TouchableOpacity onPress={() => navigation.navigate('Gerenciamento De Contatos')} style={styles.button} >
                 <Text style={styles.buttonText}>Contatos</Text>
               </TouchableOpacity>
             </View>

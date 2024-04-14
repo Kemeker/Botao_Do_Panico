@@ -12,7 +12,7 @@ function GerenciamentoDeContatos ({ navigation }) {
   }
 
   return (
-    <View style={Style.container}>
+    <View style={styles.container}>
       <AdicionarContato onAdicionar={atualizarContatos} />
       <ListarContatos contatos={contatos} onAtualizar={atualizarContatos} />
       

@@ -1,26 +1,53 @@
-import React, { useState, useEffect }  from "react"
-import { View, TextInput, Button } from 'react-native'
+import React, { useState } from "react";
+import { View, TextInput, Button, StyleSheet } from 'react-native';
 
-
-function AdicionarContato(){
-    const [novoContato, setNovoContato] = useState({nome: '', telefone: ''})
+function AdicionarContato({ onAdicionar }) { // onAdicionar precisa ser passado como prop
+    const [nome, setNome] = useState('');
+    const [telefone, setTelefone] = useState('');
     
     const adicionarContato = () => {
-        // logica para adicionar contatos
-        onAdicionnar([...ConstantSourceNode, novoContato])
-        setNovoContato({nome: '', Telefone: '' }) // resetar o estado apos adicionar
+        // lógica para adicionar contatos
+        const novoContato = { nome, telefone }; // Criar o objeto novoContato
+        onAdicionar(novoContato); // Adicionar o novo contato
+        setNome(''); // Resetar o nome após adicionar
+        setTelefone(''); // Resetar o telefone após adicionar
     }
 
     return(
         <View>
-            <TextInput>Nome</TextInput>
-            <TextInput>telefone</TextInput>
-            <Button>Adicionar</Button>
+            <TextInput
+                style={styles.input}
+                placeholder="Nome"
+                value={nome}
+                onChangeText={setNome}
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Telefone"
+                value={telefone}
+                onChangeText={setTelefone}
+                keyboardType="phone-pad" // Teclado numérico para telefone
+            />
+            <Button
+                title="Adicionar"
+                onPress={adicionarContato}
+            />
         </View>
-
-    )
+    );
 }
-export default AdicionarContato
+
+const styles = StyleSheet.create({
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+    },
+    // Adicione mais estilos conforme necessário
+});
+
+export default AdicionarContato;
+
 
 
 
