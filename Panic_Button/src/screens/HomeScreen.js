@@ -5,24 +5,30 @@ import CustomButton from '../components/Button_Panic.js'
 
 
 function HomeScreen({ navigation }) {
-  function TelaDeContatos(){
-    navigation.navigate('Contato');
-  };
+  function Adicionar_Contatos(){
+    navigation.navigate('Contato')
+  }
+  function ListaDeContatos(){
+    navigation.navigate('ListaDeContatos')
+  }
+  function ExcluirContato(){
+    navigation.navigate('ExcluirContato')
+  }
  
 
   return (
       <ImageBackground source={{uri: 'https://www.securityreport.com.br/wp-content/uploads/2016/11/shutterstock_266676590_Sashkin.jpg' }} style={styles.container} >
         <View style={styles.container} >
             <View style={styles.buttonFunc}>
-              <TouchableOpacity onPress={TelaDeContatos} style={styles.button} >
+              <TouchableOpacity onPress={Adicionar_Contatos} style={styles.button} >
                 <Text style={styles.buttonText}>Cadastrar Contato</Text>
               </TouchableOpacity>
               
-              <TouchableOpacity onPress={TelaDeContatos} style={styles.button} >
-                <Text style={styles.buttonText}>Meus Contatos</Text>
+              <TouchableOpacity onPress={ListaDeContatos} style={styles.button} >
+                <Text style={styles.buttonText}>Lista de Contatos</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={TelaDeContatos} style={styles.button} >
+              <TouchableOpacity onPress={ExcluirContato} style={styles.button} >
                 <Text style={styles.buttonText}>Excluir Contato</Text>
               </TouchableOpacity>
               

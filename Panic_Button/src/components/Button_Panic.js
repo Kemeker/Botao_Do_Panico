@@ -71,4 +71,6 @@ const styles_1 = StyleSheet.create({
 })
 
 
-export default CustomButton;
+export default CustomButton
+
+
