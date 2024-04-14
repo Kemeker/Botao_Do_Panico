@@ -5,13 +5,14 @@ function AdicionarContato({ onAdicionar }) { // onAdicionar precisa ser passado 
     const [nome, setNome] = useState('');
     const [telefone, setTelefone] = useState('');
     
-    const adicionarContato = () => {
-        // lógica para adicionar contatos
-        const novoContato = { nome, telefone }; // Criar o objeto novoContato
-        onAdicionar(novoContato); // Adicionar o novo contato
-        setNome(''); // Resetar o nome após adicionar
-        setTelefone(''); // Resetar o telefone após adicionar
-    }
+    const handleAdicionar = () => {
+        if (nome && telefone) {
+          const novoContato = { id: Date.now(), nome, telefone };
+          onAdicionar(novoContato);
+          setNome('');
+          setTelefone('');
+        }
+    }    
 
     return(
         
@@ -32,7 +33,7 @@ function AdicionarContato({ onAdicionar }) { // onAdicionar precisa ser passado 
             />
             <Button
                 title="Adicionar"
-                onPress={adicionarContato}
+                onPress={handleAdicionar }
             />
         </View>
            

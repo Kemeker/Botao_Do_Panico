@@ -1,19 +1,20 @@
 import React, { useState } from "react"
 import { View, TextInput, Button, StyleSheet } from 'react-native'
 
-function EditarContato({ navigation, route }){
-    const {contato} = route.params
+function EditarContato({ route, navigation }){
+    const { contato } = route.params;
+    const [nome, setNome] = useState(contato.nome);
+    const [telefone, setTelefone] = useState(contato.telefone)
     
    
-    const [nome, setNome] = useState(contato.nome)
-    const [telefone, setTelefone] = useState(contato.telefone)
+    
 
     const editarContato = () => {
         // logica para editar contato
-        const contatoEditado = {id: contato.id, nome, telefone} 
+        const contatoEditado = {...contato, nome, telefone} 
 
         // chama a API para atualizar contato
-        navigation.goBack()// voltar para a tela anterior apos ediçao
+        navigation.navigate('Gerenciamento De Contatos',{ contatoEditado } )// voltar para a tela anterior apos ediçao
     }
     return(
         <View>
