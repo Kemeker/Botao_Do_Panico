@@ -4,14 +4,18 @@ import { View, FlatList, Text, TouchableOpacity, StyleSheet } from 'react-native
 function ListarContatos({ contatos, onExcluir, onEditar }) {
   const renderItem = ({ item }) => (
     <View style={styles.itemContainer}>
-      <Text style={styles.itemText}>{item.nome}</Text>
-      <Text style={styles.itemText}>{item.telefone}</Text>
-      <TouchableOpacity onPress={() => onEditar(item)}>
-        <Text style={styles.buttonText}>Editar</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => onExcluir(item.id)}>
-        <Text style={styles.buttonText}>Excluir</Text>
-      </TouchableOpacity>
+      <View style={styles.contactInfo}>
+        <Text style={styles.itemText}>{item.nome}</Text>
+        <Text style={styles.itemText}>{item.telefone}</Text>
+      </View>
+      <View style={styles.buttonsContainer}>
+        <TouchableOpacity style={styles.buttonEditar} onPress={() => onEditar(item)}>
+          <Text style={styles.buttonText}>Editar</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonExcluir} onPress={() => onExcluir(item.id)}>
+          <Text style={styles.buttonText}>Excluir</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 
@@ -32,22 +36,45 @@ const styles = StyleSheet.create({
   itemContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: 'gray',
   },
-  itemText: {
+  contactInfo: {
     flex: 1,
+    marginRight: 10, // Add space between contact info and buttons
+  },
+  buttonsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  buttonEditar: {
+    backgroundColor: '#007BFF', // Blue color for buttons
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 5,
+    marginHorizontal: 5, // Space between buttons
+  },
+  buttonExcluir: {
+    backgroundColor: 'red', // Blue color for buttons
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 5,
+    marginHorizontal: 5,
   },
   buttonText: {
-    color: 'red',
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  itemText: {
+    fontSize: 15,
+    color: 'black',
+    fontWeight: 'bold',
   }
 });
 
 export default ListarContatos;
 
 
-/*
-Lista (FlatList ou ScrollView) que exibe os contatos.
-Cada item da lista deve ter botões ou opções para editar e excluir.
-*/
+

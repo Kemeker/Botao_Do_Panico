@@ -34,6 +34,7 @@ function AdicionarContato({ onAdicionar }) { // onAdicionar precisa ser passado 
             <Button
                 title="Adicionar"
                 onPress={handleAdicionar }
+                
             />
         </View>
            
@@ -48,10 +49,11 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         margin: 12,
-        borderWidth: 1,
+        borderWidth: 2,
+        borderRadius: 8,
         padding: 10,
     },
-    // Adicione mais estilos conforme necessário
+   
 });
 
 export default AdicionarContato;
