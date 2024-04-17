@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import React, { useState } from "react"
+import { View, TextInput, Button, StyleSheet } from 'react-native'
 
 function AdicionarContato({ onAdicionar }) { // onAdicionar precisa ser passado como prop
     const [nome, setNome] = useState('');
