@@ -1,20 +1,31 @@
+import axios from "axios";
 import React, { useState } from "react"
 import { View, TextInput, Button, StyleSheet, ImageBackground } from 'react-native'
 
 function EditarContato({ route, navigation }){
     const { contato } = route.params;
-    const [nome, setNome] = useState(contato.nome);
-    const [telefone, setTelefone] = useState(contato.telefone)
+    const [name, setName] = useState(contato.name)
+    const [phoneNumber, setPhoneNumber] = useState(contato.phoneNumber)
     
    
     
 
     const editarContato = () => {
         // logica para editar contato
-        const contatoEditado = {...contato, nome, telefone} 
+        const contatoEditado = { ...contato, name, phoneNumber } 
 
         // chama a API para atualizar contato
-        navigation.navigate('Gerenciamento De Contatos',{ contatoEditado } )// voltar para a tela anterior apos ediçao
+        axios.put(`http://192.168.2.110:3000/api/contacts/${contato.id}`, contatoEditado)
+            .then(response => {
+                // Atualização bem-sucedida, você pode querer atualizar o estado global ou navegar para outra tela
+                alert('Contato atualizado com sucesso!');
+                navigation.goBack(); // Volta para a tela anterior após edição
+            })
+            .catch(error => {
+            // Houve um erro na atualização
+                console.error('Erro ao atualizar o contato:', error);
+                alert('Erro ao atualizar o contato.');
+            });  
     }
     return(
             
@@ -24,15 +35,15 @@ function EditarContato({ route, navigation }){
                 <TextInput
                     style={styles.input}
                     placeholder="Nome"
-                    value={nome}
-                    onChangeText={setNome}
+                    value={name}
+                    onChangeText={setName}
                 />
                 
                 <TextInput
                     style={styles.input}
                     placeholder="Telefone"
-                    value={telefone}
-                    onChangeText={setTelefone}
+                    value={phoneNumber}
+                    onChangeText={setPhoneNumber}
                     keyboardType="phone-pad" // Teclado numérico para telefone
                 />
                 <Button

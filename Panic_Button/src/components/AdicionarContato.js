@@ -2,15 +2,15 @@ import React, { useState } from "react"
 import { View, TextInput, Button, StyleSheet } from 'react-native'
 
 function AdicionarContato({ onAdicionar }) { // onAdicionar precisa ser passado como prop
-    const [nome, setNome] = useState('');
-    const [telefone, setTelefone] = useState('');
+    const [name, setName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     
     const handleAdicionar = () => {
-        if (nome && telefone) {
-          const novoContato = { id: Date.now(), nome, telefone };
+        if (name && phoneNumber) {
+          const novoContato = { id: Date.now(), name, phoneNumber };
           onAdicionar(novoContato);
-          setNome('');
-          setTelefone('');
+          setName('');
+          setPhoneNumber('');
         }
     }    
 
@@ -21,14 +21,14 @@ function AdicionarContato({ onAdicionar }) { // onAdicionar precisa ser passado 
             <TextInput
                 style={styles.input}
                 placeholder="Nome"
-                value={nome}
-                onChangeText={setNome}
+                value={name}
+                onChangeText={setName}
             />
             <TextInput
                 style={styles.input}
                 placeholder="Telefone"
-                value={telefone}
-                onChangeText={setTelefone}
+                value={phoneNumber}
+                onChangeText={setPhoneNumber}
                 keyboardType="phone-pad" // Teclado numérico para telefone
             />
             <Button

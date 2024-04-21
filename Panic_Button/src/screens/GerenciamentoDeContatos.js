@@ -2,6 +2,7 @@ import React, { useEffect, useState,  } from 'react'
 import { View,  StyleSheet, Text, ImageBackground} from 'react-native'
 import AdicionarContato from '../components/AdicionarContato'
 import ListarContatos from '../components/ListarContatos'
+import axios from 'axios'
 
 function GerenciamentoDeContatos ({ navigation, route }) {
   const [contatos, setContatos]  = useState([])
@@ -9,30 +10,45 @@ function GerenciamentoDeContatos ({ navigation, route }) {
   const contatoEditado = route.params?.contatoEditado
 
   useEffect(() => {
-    if (contatoEditado) {
-        const novosContatos = contatos.map(cont => {
-            if (cont.id === contatoEditado.id) {
-                return contatoEditado;
-            }
-            return cont;
-        });
-        setContatos(novosContatos);
-    }
-}, [contatoEditado])
+    axios.get('http://192.168.2.110:3000/api/contacts')
+      .then(response => {
+        setContatos(response.data); // Atualiza o estado com os contatos recebidos
+      })
+      .catch(error => {
+        console.error('Erro ao buscar contatos:', error);
+        setMensagem('Erro ao buscar contatos.');
+      });
+  }, [contatoEditado]);
 
   // funçao para atualizar a lista de contatos apos uma adiçao ou exclusao
   const atualizarContatos = (novoContato) => {
-    setContatos([...contatos, novoContato])
-    setMensagem('Contato adicionado!')
-    setTimeout(() => setMensagem(''), 2000)  // Limpa a mensagem após 2 segundos
-  }  
+    axios.post('http://192.168.2.110:3000/api/contacts', novoContato)
+      .then(response => {
+        setContatos([...contatos, response.data]); // Adiciona o novo contato à lista
+        setMensagem('Contato adicionado!');
+        setTimeout(() => setMensagem(''), 2000); // Limpa a mensagem após 2 segundos
+      })
+      .catch(error => {
+        console.error('Erro ao adicionar o contato:', error);
+        setMensagem('Erro ao adicionar o contato.');
+      });
+  }; 
 
   // funçao para excluir contatos
   const excluirContato = (id) => {
-    //logica para excluir
-    const filtrados = contatos.filter(contato => contato.id !== id )
-    setContatos(filtrados)
-    // adicionar chamada para API se necessario 
+    axios.delete(`http://192.168.2.110:3000/api/contacts/${id}`)
+    .then(() => {
+      const filtrados = contatos.filter(contato => contato.id !== id);
+      setContatos(filtrados);
+      setMensagem('Contato excluído!');
+      setTimeout(() => setMensagem(''), 2000); // Limpa a mensagem após 2 segundos
+    })
+
+    .catch(error => {
+      console.error('Erro ao excluir o contato:', error);
+      setMensagem('Erro ao excluir o contato.');
+    })
+    
   }
 
   // funçao para editar contato

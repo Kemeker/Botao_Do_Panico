@@ -3,10 +3,12 @@ import { View, FlatList, Text, TouchableOpacity, StyleSheet } from 'react-native
 
 function ListarContatos({ contatos, onExcluir, onEditar }) {
   const renderItem = ({ item }) => (
+    
+    
     <View style={styles.itemContainer}>
       <View style={styles.contactInfo}>
-        <Text style={styles.itemText}>{item.nome}</Text>
-        <Text style={styles.itemText}>{item.telefone}</Text>
+        <Text style={styles.itemText}>{item.name}</Text>
+        <Text style={styles.itemText}>{item.phoneNumber}</Text>
       </View>
       <View style={styles.buttonsContainer}>
         <TouchableOpacity style={styles.buttonEditar} onPress={() => onEditar(item)}>
@@ -17,7 +19,10 @@ function ListarContatos({ contatos, onExcluir, onEditar }) {
         </TouchableOpacity>
       </View>
     </View>
+    
   );
+ 
+  
 
   return (
     <FlatList
