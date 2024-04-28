@@ -3,20 +3,27 @@ import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
 import { Linking } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
 
-function CustomButton({ numeroContato }) {
-  const enviarMensagemSOS = () => {
-    const mensagem = "Este é um alerta de SOS. Estou em perigo e preciso de ajuda imediatamente. "
-    const url = `whatsapp://send?text=${encodeURIComponent(mensagem)}&phone=${numeroContato}`
+function CustomButton({ contatos }) {
 
-    Linking.canOpenURL(url)
-    .then((supported) => {
-      if (!supported) {
-        console.log('Nao e possivel abrir Whatsapp')
-      }else {
-        return Linking.openURL(url)
-      }
+  const enviarMensagemSOS = () => {
+    contatos.forEach(contato => {
+      const mensagem = "Este é um alerta de SOS. Estou em perigo e preciso de ajuda imediatamente.";
+      const url = `whatsapp://send?text=${encodeURIComponent(mensagem)}&phone=${contato.phoneNumber}`
+  
+
+    
+
+
+      Linking.canOpenURL(url)
+      .then((supported) => {
+        if (!supported) {
+          console.log('Nao e possivel enviar mensagem para o contato: ', contato.phoneNumber)
+        }else {
+          return Linking.openURL(url)
+        }
+      })
+      .catch((err) => console.error('Ocorreu um erro ao abrir o WhatsApp para o número:', contato.phoneNumber, err))
     })
-    .catch((err) => console.error('Ocorreu um erro ao abrir Whatsaapp', err))
   } 
 
   return (
