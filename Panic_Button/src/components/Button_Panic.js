@@ -1,31 +1,44 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
+import { Linking } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
 
-function CustomButton({ onPress, title }) {
+function CustomButton({ numeroContato }) {
+  const enviarMensagemSOS = () => {
+    const mensagem = "Este é um alerta de SOS. Estou em perigo e preciso de ajuda imediatamente. "
+    const url = `whatsapp://send?text=${encodeURIComponent(mensagem)}&phone=${numeroContato}`
+
+    Linking.canOpenURL(url)
+    .then((supported) => {
+      if (!supported) {
+        console.log('Nao e possivel abrir Whatsapp')
+      }else {
+        return Linking.openURL(url)
+      }
+    })
+    .catch((err) => console.error('Ocorreu um erro ao abrir Whatsaapp', err))
+  } 
 
   return (
-    <>
-
-    
-    <View>
-      <Text style={tw`text-lg text-white`}>Precione para pedir ajuda</Text>
-    </View>
-    <TouchableOpacity
-        
-      onPress={onPress}
-      style={tw`bg-red-500 px-10 py-3 rounded-full items-center justify-center shadow-lg`}
-      activeOpacity={0.7}
-    >
-      
-      <Text style={tw`text-white text-lg uppercase tracking-wide font-bold`}>S.O.S
-        {title}
-      </Text>
-      
-    </TouchableOpacity>
-    
    
-  </>
+
+   
+      <View>
+          <Text style={tw`text-lg text-white`}>Precione para pedir ajuda</Text>
+        
+          <TouchableOpacity
+            
+            onPress={enviarMensagemSOS}
+            style={tw`bg-red-500 px-10 py-3 rounded-full items-center justify-center shadow-lg`}
+            activeOpacity={0.7}
+          >
+          
+          <Text style={tw`text-white text-lg uppercase tracking-wide font-bold`}>S.O.S</Text>
+          
+        </TouchableOpacity>
+      </View>
+   
+  
 
    );
 }

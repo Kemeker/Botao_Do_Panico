@@ -61,9 +61,3 @@ export default AdicionarContato;
 
 
 
-/*
-Campo de entrada para o nome do contato.
-Campo de entrada para o número de telefone.
-Botão para salvar o novo contato.
-Função para enviar o contato para a API ou adicionar à lista local
-*/

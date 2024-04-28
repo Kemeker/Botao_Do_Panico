@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         padding: 10,
     },
-    // Adicione mais estilos conforme necessário
+    
 });
     
 export default EditarContato
