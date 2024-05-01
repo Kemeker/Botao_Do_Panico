@@ -1,8 +1,10 @@
 import React, { useEffect, useState,  } from 'react'
-import { View,  StyleSheet, Text, ImageBackground} from 'react-native'
+import { View,  StyleSheet, Text, ImageBackground, Button} from 'react-native'
 import AdicionarContato from '../components/AdicionarContato'
 import ListarContatos from '../components/ListarContatos'
+import Panic_Button from '../components/Button_Panic'
 import axios from 'axios'
+import CustomButton from '../components/Button_Panic'
 
 function GerenciamentoDeContatos ({ navigation, route }) {
   const [contatos, setContatos]  = useState([])

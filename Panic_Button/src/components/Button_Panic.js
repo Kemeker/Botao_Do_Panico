@@ -7,8 +7,9 @@ function CustomButton({ contatos }) {
 
   const enviarMensagemSOS = () => {
     contatos.forEach(contato => {
-      const mensagem = "Este é um alerta de SOS. Estou em perigo e preciso de ajuda imediatamente.";
-      const url = `whatsapp://send?text=${encodeURIComponent(mensagem)}&phone=${contato.phoneNumber}`
+      const mensagem = "Este é um alerta de SOS. Estou em perigo e preciso de ajuda imediatamente. ( APENAS UM TESTE DO APLICATIVO) ";
+      const FormatarNumeroParaCodigoPais = `+55${contato.phoneNumber.replace(/[^0-9]/g, '')}`
+      const url = `https://api.whatsapp.com/send/?phone=${FormatarNumeroParaCodigoPais}&text=${encodeURIComponent(mensagem)}&type=phone_number&app_absent=0`
   
 
     
@@ -17,12 +18,12 @@ function CustomButton({ contatos }) {
       Linking.canOpenURL(url)
       .then((supported) => {
         if (!supported) {
-          console.log('Nao e possivel enviar mensagem para o contato: ', contato.phoneNumber)
+          console.log('Nao e possivel enviar mensagem para o contato: ', FormatarNumeroParaCodigoPais)
         }else {
           return Linking.openURL(url)
         }
       })
-      .catch((err) => console.error('Ocorreu um erro ao abrir o WhatsApp para o número:', contato.phoneNumber, err))
+      .catch((err) => console.error('Ocorreu um erro ao abrir o WhatsApp para o número:', FormatarNumeroParaCodigoPais, err))
     })
   } 
 
