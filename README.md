@@ -25,10 +25,11 @@ Corrigir alguns erros do backedn e colocar para rodar em formato apk.
 
 ## Screenshots
 
-![App Screenshot](https://media.licdn.com/dms/image/D4D22AQE3t--tOp-HLw/feedshare-shrink_800/0/1712993742622?e=1715817600&v=beta&t=TytmYYYPSh61JQTDZ1-osGbh8io6TEG5P61P8uzAd2c)
+![App Screenshot](https://media.licdn.com/dms/image/D4D22AQFREygjOMAPIw/feedshare-shrink_800/0/1714532408817?e=1717632000&v=beta&t=eKLY8GWqYcFs7o2B-7QyXxyQgofuOSmhyEODM5iHqGE)
 
-![App Screenshot](https://media.licdn.com/dms/image/D4D22AQGC3m_w5LfEww/feedshare-shrink_2048_1536/0/1712993742585?e=1715817600&v=beta&t=2eX4vNXo_QTZNxJosCpkZpaYdLsVFccHAqSr1huHA3M)
-
+![App Screenshot](https://media.licdn.com/dms/image/D4D22AQGg_vN0OCaQ4A/feedshare-shrink_800/0/1714532408855?e=1717632000&v=beta&t=quo_GS3yEOjK-d47701MM8lMk2VqiMeNvCghKs7PiQo)
+![App Screenshot](https://media.licdn.com/dms/image/D4D22AQEJ9n8vFIR0rg/feedshare-shrink_800/0/1714532408713?e=1717632000&v=beta&t=JBgWoh5KYaycdi-KuicBw3Q9522AunLtnI9Q0LLgA58)
+![App Screenshot](https://media.licdn.com/dms/image/D4D22AQEv-gL-LSMREg/feedshare-shrink_1280/0/1714532408718?e=1717632000&v=beta&t=s73KY81VSki_wufNMtSGGMWbpWoqvPD2piR_Sp_s-nk)
 
 
 ## 🛠 Habilidades
