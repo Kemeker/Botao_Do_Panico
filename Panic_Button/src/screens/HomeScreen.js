@@ -19,7 +19,7 @@ function HomeScreen({ navigation }) {
             <View style={styles.buttonSOS}> 
               <CustomButton />
             </View>
-          
+            
         </View>
       </ImageBackground>
       
