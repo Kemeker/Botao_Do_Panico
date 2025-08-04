@@ -22,7 +22,7 @@ function HomeScreen({ navigation }) {
 
   return (
     <ImageBackground
-      backgroundColor="rgb(12, 7, 63)"
+      backgroundColor="black"
       style={styles.container}
     >
       {/* Header */}
