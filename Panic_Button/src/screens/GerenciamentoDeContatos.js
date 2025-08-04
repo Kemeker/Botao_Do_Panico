@@ -62,7 +62,9 @@ function GerenciamentoDeContatos ({ navigation, route }) {
 
   return (
     
-      <ImageBackground source={{uri: 'https://itforum.com.br/wp-content/uploads/2021/05/confianc%CC%A7a-trabalho-2.png' }} style={styles.container}>
+      <ImageBackground 
+      backgroundColor="rgb(12, 7, 63)"
+      style={styles.container}>
         <View style={styles.container}> 
           <AdicionarContato onAdicionar={atualizarContatos} />
           {mensagem ? <Text>{mensagem}</Text> : null}
